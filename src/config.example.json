@@ -1,0 +1,16 @@
+{
+  "botToken": "",
+  "authedUsers": [
+    {
+      "discordID": "",
+      "assToken": ""
+    }
+  ],
+  "uploadChannel": "",
+  "baseURL": "",
+  "assHeaders": {
+    "X-Ass-OG-Author-Url": "",
+    "X-Ass-OG-Title": "",
+    "X-Ass-Webhook-Url": ""
+  }
+}
