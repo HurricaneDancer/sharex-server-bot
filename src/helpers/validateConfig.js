@@ -21,5 +21,5 @@ const schema = Joi.object({
 
 module.exports = function (config) {
   const result = schema.validate(config);
-  if (result.error) throw result.error;
+  if (result.error) throw new Error(result.error.message);
 };
