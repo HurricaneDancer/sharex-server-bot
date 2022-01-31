@@ -9,8 +9,8 @@
   "uploadChannel": "",
   "baseURL": "",
   "assHeaders": {
-    "X-Ass-OG-Author-Url": "",
-    "X-Ass-OG-Title": "",
+    "X-Ass-OG-Author-Url": "https://github.com/HurricaneDancer/sharex-server-bot",
+    "X-Ass-OG-Title": "Uploaded via ShareX Server Bot",
     "X-Ass-Webhook-Url": ""
   }
 }
