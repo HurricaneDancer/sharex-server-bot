@@ -2,17 +2,25 @@ const axios = require("axios");
 const FormData = require("form-data");
 const supportedTypes = ["gif", "png", "jpg"];
 
-module.exports = async function (user, attachment, config) {
+module.exports = async function (user, customName, attachment, config) {
   if (!attachment) return "Invalid attachment";
   const attachmentType = attachment.contentType.split("/")[1];
   if (!supportedTypes.includes(attachmentType)) return "Unsupported type";
-  console.log(`Uploading ${attachment.name}`);
+
+  if (customName.length > 100)
+    return "Custom name too long. Should be less than or equal to 100";
+
+  const fileName = customName
+    ? `${customName}.${attachmentType}`
+    : attachment.name;
+  console.log(`Uploading ${fileName}`);
 
   const imageResponse = await axios.default.get(attachment.url, {
     responseType: "arraybuffer",
   });
   const data = new FormData();
-  data.append("file", imageResponse.data, attachment.name);
+
+  data.append("file", imageResponse.data, fileName);
 
   const response = await axios.default.post(config.baseURL, data, {
     headers: {

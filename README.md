@@ -4,6 +4,8 @@
 <p>
 You upload an image or gif to a certain discord channel (which you set in your config), and then the bot will fetch the image from discord, turn it into form data and upload it to your server.
 
+If you want to change the name of the file, you can send the name with the file in the message content. DO NOT send the attachment type as it will be assigned automatically.
+
 The result should look something like this: <br>
 <img src = "https://i.hurricanedancer.com/o7FhxrYdgaAa/thumbnail">
 

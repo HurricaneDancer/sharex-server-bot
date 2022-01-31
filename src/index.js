@@ -36,6 +36,6 @@ client.on("messageCreate", async (message) => {
 
   const attachment = message.attachments.first();
 
-  const result = await upload(user, attachment, config);
+  const result = await upload(user, message.content, attachment, config);
   return message.channel.send(result);
 });
