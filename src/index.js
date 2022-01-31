@@ -7,15 +7,14 @@ const client = new Client({
   ],
 });
 const config = require("./config.json");
+const validateConfig = require("./helpers/validateConfig");
+validateConfig(config);
+
 const upload = require("./helpers/upload");
 
 client.login(config.botToken);
 
 client.on("ready", () => {
-  if (config.authedUsers.length === 0) throw new Error("No users defined");
-  if (!config.uploadChannel) throw new Error("No upload channel specified");
-  if (!config.baseURL) throw new Error("No base URL specified");
-
   console.log("Online");
 });
 
