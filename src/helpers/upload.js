@@ -8,7 +8,7 @@ module.exports = async function (user, customName, attachment, config) {
   if (!supportedTypes.includes(attachmentType)) return "Unsupported type";
 
   if (customName.length > 100)
-    return "Custom name too long. Should be less than or equal to 100";
+    return "Custom name too long. Should be between 1-100 characters.";
 
   const fileName = customName
     ? `${customName}.${attachmentType}`

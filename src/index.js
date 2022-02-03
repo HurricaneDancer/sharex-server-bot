@@ -27,10 +27,6 @@ client.on("messageCreate", async (message) => {
   );
 
   if (!user) return;
-  if (!user.assToken)
-    throw new Error(
-      `User ${message.author.username}(${message.author.id}) has no token specified`
-    );
   if (message.attachments.length === 0) return;
 
   const attachment = message.attachments.first();
